@@ -1,0 +1,99 @@
+{
+  "sections": [
+    {
+      "type": "hero",
+      "badge": "Creative Performance Agency",
+      "heading": "We Make Ads That\nActually Convert.",
+      "subheading": "Ad Misfits is a scrappy, data-obsessed creative studio that builds performance ads for DTC brands who are done burning budget on beautiful-but-useless content.",
+      "buttons": [
+        { "label": "See Our Work", "href": "#benefits", "variant": "default", "size": "lg" },
+        { "label": "Talk to Us", "href": "#cta", "variant": "outline", "size": "lg" }
+      ]
+    },
+    {
+      "type": "benefits",
+      "heading": "Why Brands Choose the Misfits",
+      "subheading": "We don't do brand fluff. Every creative decision is tied to a metric.",
+      "items": [
+        {
+          "icon": "Zap",
+          "title": "Speed to Launch",
+          "description": "From brief to live ad in 5 business days. We've built production systems so you stop leaving money on the table waiting on creative."
+        },
+        {
+          "icon": "Target",
+          "title": "Conversion-First Creative",
+          "description": "Every hook, headline, and visual choice is engineered to stop the scroll and drive clicks. We test, learn, and iterate relentlessly."
+        },
+        {
+          "icon": "BarChart2",
+          "title": "Performance Reporting",
+          "description": "Full visibility into what's working and why. We connect creative decisions to ROAS, CTR, and CAC so you always know what to scale."
+        }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "heading": "Don't Take Our Word For It",
+      "subheading": "Results from brands who got tired of average.",
+      "items": [
+        {
+          "quote": "We went from a 1.8x ROAS to 4.2x in 60 days. The Ad Misfits team understood our customer better than our in-house team did.",
+          "author": "Priya Mehta",
+          "role": "Head of Growth",
+          "company": "Lumino Skincare"
+        },
+        {
+          "quote": "Finally a creative partner that speaks the language of media buyers. They don't just make pretty ads — they make ads that scale.",
+          "author": "Jordan Tse",
+          "role": "Founder & CEO",
+          "company": "Stackd Nutrition"
+        },
+        {
+          "quote": "Their UGC hooks cut our CPMs by 38%. The process was painless and the team communicates like pros.",
+          "author": "Marcus Webb",
+          "role": "VP Marketing",
+          "company": "Fieldwork Goods"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "heading": "Ready to Make Ads That Work?",
+      "description": "Book a free 30-minute creative audit. We'll review your current ads, identify the biggest conversion leaks, and show you exactly what we'd do differently.",
+      "button": {
+        "label": "Book Your Free Audit",
+        "href": "#",
+        "variant": "secondary",
+        "size": "lg"
+      }
+    },
+    {
+      "type": "faq",
+      "heading": "Frequently Asked Questions",
+      "subheading": "Everything you need to know before we get to work.",
+      "items": [
+        {
+          "question": "What types of ads do you produce?",
+          "answer": "We specialize in paid social creative for Meta, TikTok, and YouTube — including static images, short-form video (UGC and produced), carousels, and motion graphics. We tailor the format to where your audience converts."
+        },
+        {
+          "question": "How fast can you turn around new creative?",
+          "answer": "Our standard turnaround is 5 business days from an approved brief. For rush projects, we offer a 48-hour sprint at a small premium. We've refined our production workflow to move fast without sacrificing quality."
+        },
+        {
+          "question": "Do you require a long-term contract?",
+          "answer": "No. We offer month-to-month retainers and project-based engagements. We'd rather earn your business every month than lock you in and coast. Most clients stay 12+ months anyway — because the results keep improving."
+        },
+        {
+          "question": "What information do you need to get started?",
+          "answer": "We start with a creative brief, access to your ad account analytics, and any existing top-performing creatives. The more context you give us about your customer and what's already worked, the faster we can dial in."
+        },
+        {
+          "question": "How is Ad Misfits different from a regular creative agency?",
+          "answer": "Most agencies optimize for awards and aesthetics. We optimize for performance metrics. Our team is made up of performance marketers who learned to make creative, not designers who learned to run ads. That difference shows up in the results."
+        }
+      ]
+    }
+  ]
+}
