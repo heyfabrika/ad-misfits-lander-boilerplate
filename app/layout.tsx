@@ -1,11 +1,16 @@
-import { Geist, Geist_Mono, DM_Sans } from "next/font/google"
-
+import { DM_Sans, Geist_Mono, Syne } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-const dmSans = DM_Sans({subsets:['latin'],variable:'--font-sans'})
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+})
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
@@ -20,15 +25,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", dmSans.variable)}
+      className={cn(
+        "dark scroll-smooth antialiased",
+        dmSans.variable,
+        syne.variable,
+        fontMono.variable
+      )}
     >
-      <body>
-        <ThemeProvider>
-          <ThemeToggle />
-          {children}
-        </ThemeProvider>
-      </body>
+      <body className="font-sans">{children}</body>
     </html>
   )
 }

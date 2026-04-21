@@ -1,99 +1,618 @@
 {
+  "site": {
+    "brand": "ScaleLogix",
+    "header": {
+      "logoText": "ScaleLogix",
+      "navLinks": [
+        { "label": "Why Us", "href": "#whyus" },
+        { "label": "How It Works", "href": "#how-it-works" },
+        { "label": "Features", "href": "#features" },
+        { "label": "FAQ", "href": "#faq" }
+      ],
+      "cta": {
+        "label": "Book a Strategy Call",
+        "href": "#book",
+        "variant": "default",
+        "size": "default"
+      }
+    },
+    "footer": {
+      "contactEmail": "support@getscalelogixai.com",
+      "legalLinks": [
+        { "label": "Privacy Policy", "href": "#" },
+        { "label": "Terms of Service", "href": "#" }
+      ],
+      "legalDisclaimer": "ScaleLogix A.I is a consulting and infrastructure licensing company. We do not offer business opportunities, franchises, or passive investments. Nothing in our materials should be interpreted as a guarantee of income, success, or results. All earnings examples are illustrative only. Your results will vary and depend on your niche, offer quality, marketing execution, client demand, and personal effort. ScaleLogix operates under the jurisdiction of Florida, USA.",
+      "copyright": "© ScaleLogix All rights reserved."
+    }
+  },
   "sections": [
     {
+      "type": "marquee",
+      "items": [
+        "Launch in 30–60 Days",
+        "$3K–$25K Per Client",
+        "45–55% Net Margins",
+        "USA, UK & Australia",
+        "50+ Agencies Launched",
+        "$15M+ in B2B Deals Closed",
+        "Turnkey Infrastructure",
+        "3–5 Hours/Week Commitment",
+        "Commission-Only Sales Team"
+      ]
+    },
+    {
       "type": "hero",
-      "badge": "Creative Performance Agency",
-      "heading": "We Make Ads That\nActually Convert.",
-      "subheading": "Ad Misfits is a scrappy, data-obsessed creative studio that builds performance ads for DTC brands who are done burning budget on beautiful-but-useless content.",
-      "buttons": [
-        { "label": "See Our Work", "href": "#benefits", "variant": "default", "size": "lg" },
-        { "label": "Talk to Us", "href": "#cta", "variant": "outline", "size": "lg" }
-      ]
-    },
-    {
-      "type": "benefits",
-      "heading": "Why Brands Choose the Misfits",
-      "subheading": "We don't do brand fluff. Every creative decision is tied to a metric.",
-      "items": [
+      "badge": "50+ Agencies Launched · $15M+ in B2B Deals · Capacity-Limited",
+      "heading": "Own a profitable A.I. business in *30–60 days*",
+      "subheading": "Without building it, running the day-to-day, or learning any tech. For investors seeking high-cashflow businesses in the fastest-growing sector in history.",
+      "primaryCta": {
+        "label": "Book a Private Strategy Call",
+        "href": "#book",
+        "variant": "default",
+        "size": "lg"
+      },
+      "caption": "Limited to 5 new agencies per month",
+      "stats": [
         {
-          "icon": "Zap",
-          "title": "Speed to Launch",
-          "description": "From brief to live ad in 5 business days. We've built production systems so you stop leaving money on the table waiting on creative."
+          "value": "$3K–$25K",
+          "label": "Per Client Revenue",
+          "detail": "Setup fees plus monthly retainers"
         },
         {
-          "icon": "Target",
-          "title": "Conversion-First Creative",
-          "description": "Every hook, headline, and visual choice is engineered to stop the scroll and drive clicks. We test, learn, and iterate relentlessly."
+          "value": "45–55%",
+          "label": "Net Margins",
+          "detail": "Compared to 15-20% traditional agencies"
         },
         {
-          "icon": "BarChart2",
-          "title": "Performance Reporting",
-          "description": "Full visibility into what's working and why. We connect creative decisions to ROAS, CTR, and CAC so you always know what to scale."
+          "value": "3–5 hrs",
+          "label": "Weekly Commitment",
+          "detail": "CEO-level oversight only"
+        },
+        {
+          "value": "3–6 Mo",
+          "label": "Typical ROI Timeline",
+          "detail": "From first client sale"
         }
       ]
     },
     {
-      "type": "testimonials",
-      "heading": "Don't Take Our Word For It",
-      "subheading": "Results from brands who got tired of average.",
+      "type": "logoStrip",
+      "label": "FEATURED IN",
       "items": [
+        { "src": "/logos/ips.svg", "alt": "IPS" },
         {
-          "quote": "We went from a 1.8x ROAS to 4.2x in 60 days. The Ad Misfits team understood our customer better than our in-house team did.",
-          "author": "Priya Mehta",
-          "role": "Head of Growth",
-          "company": "Lumino Skincare"
+          "src": "/logos/associated-press.svg",
+          "alt": "Associated Press"
+        },
+        { "src": "/logos/news-break.svg", "alt": "News Break" },
+        {
+          "src": "/logos/business-insider.svg",
+          "alt": "Business Insider"
         },
         {
-          "quote": "Finally a creative partner that speaks the language of media buyers. They don't just make pretty ads — they make ads that scale.",
-          "author": "Jordan Tse",
-          "role": "Founder & CEO",
-          "company": "Stackd Nutrition"
+          "src": "/logos/washington-city-paper.svg",
+          "alt": "Washington City Paper"
         },
         {
-          "quote": "Their UGC hooks cut our CPMs by 38%. The process was painless and the team communicates like pros.",
-          "author": "Marcus Webb",
-          "role": "VP Marketing",
-          "company": "Fieldwork Goods"
+          "src": "/logos/times-of-san-diego.svg",
+          "alt": "Times of San Diego"
+        },
+        { "src": "/logos/open-pr.svg", "alt": "openPR" }
+      ]
+    },
+    {
+      "type": "opportunity",
+      "label": "Undeniable Opportunity",
+      "heading": "AI is the fastest technological shift in human history. Most investors will be *too late.*",
+      "cards": [
+        {
+          "title": "Adoption Speed",
+          "stat": "100M Users in 2 months",
+          "comparison": [
+            {
+              "label": "ChatGPT",
+              "value": "2 months",
+              "width": "100%",
+              "highlight": true
+            },
+            {
+              "label": "Instagram",
+              "value": "2.5 years",
+              "width": "38%"
+            },
+            {
+              "label": "Facebook",
+              "value": "4.5 years",
+              "width": "22%"
+            }
+          ]
+        },
+        {
+          "title": "Market Size",
+          "stat": "$1.85T by 2030",
+          "subtitle": "Enterprise AI Market · 35% CAGR",
+          "bullets": [
+            "Enterprise AI spending is compounding faster than almost any other B2B software category.",
+            "91% of enterprises report increasing AI budgets over the next planning cycle.",
+            "High-ticket services are moving first because call handling, follow-up, and lead qualification pay back quickly."
+          ]
+        },
+        {
+          "title": "Your Window",
+          "stat": "85% of businesses still not using AI",
+          "description": "Only 15% of the 33 million U.S. businesses have adopted AI. There is a 2-3 year window before saturation. Early movers are securing clients with minimal competition.",
+          "bullets": [
+            "Most local service companies still rely on missed calls, slow follow-up, and manual admin.",
+            "This creates a direct sales narrative around revenue recovery, not vague automation promises.",
+            "The buyers already understand labor costs. AI replaces expensive inefficiency with margin."
+          ]
         }
       ]
     },
     {
-      "type": "cta",
-      "heading": "Ready to Make Ads That Work?",
-      "description": "Book a free 30-minute creative audit. We'll review your current ads, identify the biggest conversion leaks, and show you exactly what we'd do differently.",
-      "button": {
-        "label": "Book Your Free Audit",
-        "href": "#",
-        "variant": "secondary",
+      "type": "process",
+      "label": "How It Works",
+      "heading": "Three steps to owning a *profitable* AI business",
+      "steps": [
+        {
+          "title": "You Fund the Launch",
+          "description": "Buildout costs, operational runway, and marketing. You own 100% of the brand and equity from day one."
+        },
+        {
+          "title": "ScaleLogix Runs the Business",
+          "description": "AI fulfillment systems, marketing plus lead generation, commission-only sales team, and a COO for day-to-day management."
+        },
+        {
+          "title": "You Own the Asset",
+          "description": "Your brand, your clients, your revenue, and a business you can scale long-term with exit potential."
+        }
+      ],
+      "tagline": "You're the owner/CEO. We are the operators plus infrastructure behind the scenes."
+    },
+    {
+      "type": "offer",
+      "heading": "AI automation that businesses *actually* pay for",
+      "subheading": "Businesses pay for AI systems that handle work they normally pay employees to do: answering calls, booking appointments, qualifying leads, and following up automatically.",
+      "items": [
+        {
+          "icon": "Clock3",
+          "title": "Works 24/7",
+          "description": "Never sleeps, never misses a call, and never lets a hot lead go cold."
+        },
+        {
+          "icon": "BadgeDollarSign",
+          "title": "Costs Less Than Staff",
+          "description": "A fraction of the cost of hiring employees for the same repetitive workload."
+        },
+        {
+          "icon": "Repeat2",
+          "title": "Never Misses Follow-Ups",
+          "description": "Automated outreach sequences keep prospects moving without manual effort."
+        },
+        {
+          "icon": "TrendingUp",
+          "title": "More Leads, Less Overhead",
+          "description": "Revenue expands without scaling payroll, operations, or owner involvement."
+        }
+      ],
+      "comparison": {
+        "left": {
+          "title": "You",
+          "kicker": "5-6 hrs/week",
+          "items": [
+            "Approve high-level strategy and positioning",
+            "Review dashboard performance and financial reporting",
+            "Handle occasional executive decisions",
+            "Own the asset, the equity, and the upside"
+          ]
+        },
+        "right": {
+          "title": "ScaleLogix",
+          "kicker": "Everything else",
+          "items": [
+            "Marketing execution and lead generation systems",
+            "Sales team recruiting, training, and management",
+            "AI fulfillment, implementation, and maintenance",
+            "Client support, operations, and backend infrastructure"
+          ]
+        }
+      }
+    },
+    {
+      "type": "features",
+      "heading": "Built different from everything *else* on the market",
+      "subheading": "Turnkey infrastructure. Proven systems. Zero tech skills required.",
+      "cards": [
+        {
+          "title": "Fully branded agency — yours from day one",
+          "description": "Your own brand, logo, website, domain, CRM, contracts, and client-facing systems. You own 100% of the business and equity.",
+          "items": [
+            "Brand and Website",
+            "CRM and Outreach Stack",
+            "Service Contracts",
+            "AI Delivery Systems"
+          ]
+        },
+        {
+          "title": "Commission-only sales team that closes for you",
+          "description": "Trained closers experienced in $10K-$25K deals. The structure is designed so you never have to touch a discovery or closing call.",
+          "stats": [
+            { "label": "Close Rate", "value": "20-25%" },
+            { "label": "Deal Size", "value": "$10K-$25K" },
+            { "label": "Your Sales Time", "value": "0 hrs" }
+          ]
+        }
+      ],
+      "capabilities": [
+        { "icon": "DatabaseZap", "label": "AI Lead Generation" },
+        { "icon": "ServerCog", "label": "Proprietary B2B Database" },
+        { "icon": "BriefcaseBusiness", "label": "Fractional COO" },
+        { "icon": "Bot", "label": "90% Automated Fulfillment" },
+        { "icon": "BadgeCheck", "label": "Lifetime Infrastructure License" },
+        { "icon": "LifeBuoy", "label": "Dedicated Support" }
+      ]
+    },
+    {
+      "type": "revenue",
+      "label": "Revenue Model",
+      "heading": "How the business makes *money*",
+      "stats": [
+        {
+          "value": "$3K–$15K",
+          "label": "Setup Fees",
+          "detail": "One-time onboarding and implementation fees per client."
+        },
+        {
+          "value": "$1.5K–$5K",
+          "label": "Monthly Retainers",
+          "detail": "Recurring revenue from automation management and optimization."
+        },
+        {
+          "value": "45–55%",
+          "label": "Net Margins",
+          "detail": "Well above traditional service businesses with heavy staffing."
+        }
+      ],
+      "roadmap": [
+        {
+          "phase": "Month 1-2",
+          "title": "Build phase",
+          "detail": "Agency goes live with branding, systems, and outbound infrastructure in place."
+        },
+        {
+          "phase": "Month 3-4",
+          "title": "First client closed",
+          "detail": "Historical partner data shows first deals typically land in the $5K-$10K range."
+        },
+        {
+          "phase": "Month 6",
+          "title": "$20K+ monthly revenue",
+          "detail": "By this point the agency has enough proof and pipeline to create repeatability."
+        },
+        {
+          "phase": "Month 12",
+          "title": "$200K-$300K total revenue*",
+          "detail": "Longer-term growth compounds as recurring retainers stack on top of setup fees."
+        }
+      ],
+      "trackRecord": [
+        {
+          "value": "$15M+",
+          "label": "B2B deals closed",
+          "detail": ""
+        },
+        {
+          "value": "50+",
+          "label": "Agencies launched",
+          "detail": ""
+        },
+        {
+          "value": "45-55%",
+          "label": "Typical margins",
+          "detail": ""
+        },
+        {
+          "value": "3-6 mo",
+          "label": "ROI timeline",
+          "detail": ""
+        }
+      ],
+      "footnote": "*Results vary. Based on historical partner data and average close rates."
+    },
+    {
+      "type": "results",
+      "label": "Results",
+      "heading": "Real partners. Real *revenue.* Verified results.",
+      "subheading": "Client info redacted to protect privacy. Contact your account representative for additional case studies.",
+      "items": [
+        {
+          "niche": "Home Services",
+          "stat": "19 Active Clients",
+          "detail": "$2K-$8.25K monthly retainers with recurring cash flow layered on setup fees.",
+          "timeline": "First client landed in 32 days",
+          "background": "No prior AI agency experience",
+          "services": "Inbound call handling, lead qualification, automated booking"
+        },
+        {
+          "niche": "Solar Energy",
+          "stat": "$56.5K in 4.5 Months",
+          "detail": "First month closed at $8K, then expanded into a more durable recurring revenue base.",
+          "timeline": "Revenue built inside 135 days",
+          "background": "Former solar sales manager",
+          "services": "Lead nurture, appointment setting, no-show recovery"
+        },
+        {
+          "niche": "International",
+          "stat": "$95K/mo Revenue",
+          "detail": "Approximately $57K in profit with 12 active clients by month 7.",
+          "timeline": "12 clients by month 7",
+          "background": "Former business broker",
+          "services": "AI receptionist, sales qualification, CRM workflows"
+        },
+        {
+          "niche": "Real Estate SoCal",
+          "stat": "$100K+/mo",
+          "detail": "High-ticket service packaging created meaningful retainers after the first wins.",
+          "timeline": "First deal within 60 days",
+          "background": "Already owned a real estate agency",
+          "services": "Lead qualification, listing follow-up, appointment routing"
+        },
+        {
+          "niche": "Roofing/Solar",
+          "stat": "$250,968 ARR in 6 months",
+          "detail": "Built on organic demand with 100% retention over the initial operating period.",
+          "timeline": "Run rate reached in 180 days",
+          "background": "Organic-only operator",
+          "services": "Missed-call recovery, booking automation, follow-up sequences"
+        },
+        {
+          "niche": "Legal Tech Australia",
+          "stat": "$600K+ Annual",
+          "detail": "Roughly $55K in monthly recurring revenue under the Real Flow AI brand.",
+          "timeline": "Scaled to MRR with Australian law firms",
+          "background": "Professional services focus",
+          "services": "Client intake, consultation scheduling, lead qualification"
+        }
+      ]
+    },
+    {
+      "type": "audience",
+      "heading": "Built for people who demand *proof,* not promises",
+      "items": [
+        {
+          "title": "Investor",
+          "subtitle": "High-income professionals seeking passive digital assets",
+          "description": "You want exposure to AI without building or managing from scratch. This offers a high-margin, semi-passive cash flow business with service-based upside."
+        },
+        {
+          "title": "Entrepreneur",
+          "subtitle": "Business owners diversifying into AI and automation",
+          "description": "You already run a business and see where the market is going. Add a recurring revenue AI agency to your portfolio without spreading yourself thin."
+        },
+        {
+          "title": "Career Professional",
+          "subtitle": "9-5 professionals building a business on the side",
+          "description": "Zero screen time all day is not the point. The point is 3-5 hours per week owning the asset while the operating infrastructure runs behind the scenes."
+        },
+        {
+          "title": "Not For",
+          "subtitle": "People expecting get-rich-quick results",
+          "description": "This is a real business with real timelines. If you are unwilling to invest capital or trust proven systems, this is not the right fit.",
+          "tone": "warning"
+        }
+      ],
+      "cta": {
+        "label": "Claim Your Agency",
+        "href": "#book",
+        "variant": "default",
         "size": "lg"
       }
     },
     {
-      "type": "faq",
-      "heading": "Frequently Asked Questions",
-      "subheading": "Everything you need to know before we get to work.",
+      "type": "videoTestimonials",
+      "heading": "Hear from our *customers*",
       "items": [
         {
-          "question": "What types of ads do you produce?",
-          "answer": "We specialize in paid social creative for Meta, TikTok, and YouTube — including static images, short-form video (UGC and produced), carousels, and motion graphics. We tailor the format to where your audience converts."
+          "videoId": "qMp_3b6ZOac",
+          "title": "Partner breakdown: agency launch experience",
+          "label": "Customer Story",
+          "href": "https://www.youtube.com/watch?v=qMp_3b6ZOac"
         },
         {
-          "question": "How fast can you turn around new creative?",
-          "answer": "Our standard turnaround is 5 business days from an approved brief. For rush projects, we offer a 48-hour sprint at a small premium. We've refined our production workflow to move fast without sacrificing quality."
+          "videoId": "7ao5Jh-sArc",
+          "title": "Revenue, operations, and timeline review",
+          "label": "Partner Story",
+          "href": "https://www.youtube.com/watch?v=7ao5Jh-sArc"
         },
         {
-          "question": "Do you require a long-term contract?",
-          "answer": "No. We offer month-to-month retainers and project-based engagements. We'd rather earn your business every month than lock you in and coast. Most clients stay 12+ months anyway — because the results keep improving."
-        },
-        {
-          "question": "What information do you need to get started?",
-          "answer": "We start with a creative brief, access to your ad account analytics, and any existing top-performing creatives. The more context you give us about your customer and what's already worked, the faster we can dial in."
-        },
-        {
-          "question": "How is Ad Misfits different from a regular creative agency?",
-          "answer": "Most agencies optimize for awards and aesthetics. We optimize for performance metrics. Our team is made up of performance marketers who learned to make creative, not designers who learned to run ads. That difference shows up in the results."
+          "videoId": "uDklocPOvoM",
+          "title": "How the infrastructure performs after launch",
+          "label": "Launch Review",
+          "href": "https://www.youtube.com/watch?v=uDklocPOvoM"
         }
       ]
+    },
+    {
+      "type": "team",
+      "heading": "Our infrastructure is already *proven* at scale.",
+      "items": [
+        {
+          "name": "Philip Blazdell",
+          "role": "CEO",
+          "linkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Philip%20Blazdell",
+          "avatarLabel": "Philip Blazdell"
+        },
+        {
+          "name": "David N.W. Sawyer",
+          "role": "Director, Strategic Markets, IT",
+          "linkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=David%20N.W.%20Sawyer",
+          "avatarLabel": "David Sawyer"
+        },
+        {
+          "name": "Randy Baraka",
+          "role": "Venture Partner, Head Strategy Advisor",
+          "linkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Randy%20Baraka",
+          "avatarLabel": "Randy Baraka"
+        },
+        {
+          "name": "Spilios Spiliopoulos",
+          "role": "CTO, AI Architect",
+          "linkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Spilios%20Spiliopoulos",
+          "avatarLabel": "Spilios Spiliopoulos"
+        },
+        {
+          "name": "Adam J",
+          "role": "VP, Head of Partnerships",
+          "linkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Adam%20J%20ScaleLogix",
+          "avatarLabel": "Adam J"
+        },
+        {
+          "name": "Adam Oluwaseun",
+          "role": "VP Business Solutions, AI Development",
+          "linkedinUrl": "https://www.linkedin.com/search/results/all/?keywords=Adam%20Oluwaseun",
+          "avatarLabel": "Adam Oluwaseun"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "heading": "Everything you need to know to get started with *confidence.*",
+      "subheading": "The commercial model, the operating role, the timelines, and the expectations are all laid out here.",
+      "items": [
+        {
+          "question": "What exactly is this opportunity?",
+          "answer": "You own an AI agency that sells automation solutions to businesses without building anything yourself. We license you our proven infrastructure, handle the tech, run your marketing, and close deals for your agency."
+        },
+        {
+          "question": "Why do you need me? Why not just do this yourselves?",
+          "answer": "We scale faster with outside capital than reinvesting our own. By licensing our infrastructure to partners, we expand into different niches and markets without creating a single internal bottleneck."
+        },
+        {
+          "question": "Do I have to do the sales or marketing myself?",
+          "answer": "No. We generate leads and hire, train, and manage commission-only sales reps who close deals on your behalf at a 20-25% close rate."
+        },
+        {
+          "question": "Do I need technical skills or AI experience?",
+          "answer": "No. We handle all technical work including system design, deployment, maintenance, and client fulfillment."
+        },
+        {
+          "question": "How much time do I need to commit?",
+          "answer": "Most partners dedicate 3-5 hours per week. The operating model is designed around CEO-level oversight, not owner-operator labor."
+        },
+        {
+          "question": "What's the upfront investment?",
+          "answer": "Investment tiers range from approximately $27,000 to $75,000 depending on the package and launch scope."
+        },
+        {
+          "question": "How soon will I see a return?",
+          "answer": "Month 1-2 is usually the build phase. Most partners close a first deal in month 3. By month 6 many are near break-even, and by month 12 the model is designed to support $8K-$25K per month in profit."
+        },
+        {
+          "question": "Isn't the AI market getting saturated?",
+          "answer": "Not even close. Only a small percentage of the 33 million U.S. businesses are using AI in production. The opportunity remains early, especially for local and service-based operators."
+        },
+        {
+          "question": "How do I actually make money?",
+          "answer": "Clients pay an upfront setup fee, typically between $3K and $15K, plus recurring retainers that can range from $1.5K to $15K per month depending on the service and market."
+        },
+        {
+          "question": "Is there any kind of guarantee?",
+          "answer": "The positioning on the live page states that your agency is fully built and launched within 60 days or the investment is returned. Specific commercial terms should always be confirmed directly with ScaleLogix."
+        },
+        {
+          "question": "Can I sell this business down the road?",
+          "answer": "Yes. You own the business, the brand, the clients, and the revenue. That creates the possibility of selling the asset later, subject to market conditions and business performance."
+        },
+        {
+          "question": "What kind of support do I get?",
+          "answer": "Support includes a dedicated Slack channel, a COO managing operations, recorded training, weekly strategy calls, and an ongoing support process once the agency is live."
+        }
+      ]
+    },
+    {
+      "type": "finalCta",
+      "heading": "The AI window is open *right now.* Don't be late.",
+      "subheading": "By 2027, this market will be saturated. Early movers are securing high-ticket clients with minimal competition.",
+      "cta": {
+        "label": "Apply for Your Private Consultation",
+        "href": "#book",
+        "variant": "default",
+        "size": "lg"
+      },
+      "caption": "Due to our hands-on build process, we can only launch 5 new agencies per month."
+    },
+    {
+      "type": "booking",
+      "heading": "Book a Private Strategy Call",
+      "subheading": "Answer a few quick questions here, then continue to the final application or scheduling step below. No pressure, no pitch, just a private consultation.",
+      "stepLabel": "Step 1 of 2",
+      "fields": [
+        {
+          "name": "fullName",
+          "label": "Full Name",
+          "type": "text",
+          "placeholder": "Your full name",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "placeholder": "you@example.com",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "placeholder": "+1 (555) 555-5555",
+          "required": true
+        },
+        {
+          "name": "profile",
+          "label": "What best describes you?",
+          "type": "select",
+          "required": true,
+          "options": [
+            { "label": "Investor", "value": "investor" },
+            { "label": "Entrepreneur", "value": "entrepreneur" },
+            { "label": "Career Professional", "value": "career-professional" },
+            { "label": "Other", "value": "other" }
+          ]
+        },
+        {
+          "name": "capital",
+          "label": "Capital available to invest?",
+          "type": "select",
+          "required": true,
+          "options": [
+            { "label": "<$27K", "value": "under-27k" },
+            { "label": "$27K-$50K", "value": "27k-50k" },
+            { "label": "$50K-$75K", "value": "50k-75k" },
+            { "label": "$75K+", "value": "75k-plus" }
+          ]
+        },
+        {
+          "name": "timeline",
+          "label": "How soon are you looking to start?",
+          "type": "select",
+          "required": true,
+          "options": [
+            { "label": "ASAP", "value": "asap" },
+            { "label": "1-3 months", "value": "1-3-months" },
+            { "label": "3-6 months", "value": "3-6-months" },
+            { "label": "Just exploring", "value": "exploring" }
+          ]
+        }
+      ],
+      "continueButtonLabel": "Continue to Step 2",
+      "scheduler": {
+        "provider": "placeholder",
+        "timezoneLabel": "Times shown in your timezone",
+        "title": "Choose a time for your private consultation",
+        "description": "This shell is ready for a Calendly or Cal.com embed. Until then it mirrors the layout and pacing of the live booking experience."
+      }
     }
   ]
 }

@@ -8,32 +8,79 @@
  */
 
 import type { SectionContent } from "@/content/schema"
+import { MarqueeSection } from "./marquee-section"
 import { HeroSection } from "./hero-section"
-import { BenefitsSection } from "./benefits-section"
-import { TestimonialsSection } from "./testimonials-section"
-import { CtaSection } from "./cta-section"
+import { LogoStripSection } from "./logo-strip-section"
+import { OpportunitySection } from "./opportunity-section"
+import { ProcessSection } from "./process-section"
+import { OfferSection } from "./offer-section"
+import { FeaturesSection } from "./features-section"
+import { RevenueSection } from "./revenue-section"
+import { ResultsSection } from "./results-section"
+import { AudienceSection } from "./audience-section"
+import { VideoTestimonialsSection } from "./video-testimonials-section"
+import { TeamSection } from "./team-section"
 import { FaqSection } from "./faq-section"
+import { FinalCtaSection } from "./final-cta-section"
+import { BookingSection } from "./booking-section"
+import { CalendlySection, TypeformSection } from "./embedded-iframe-section"
 
 interface SectionRendererProps {
   section: SectionContent
+  hasEmbeddedBookingFlow?: boolean
+  nextEmbeddedSectionHref?: string
 }
 
-export function SectionRenderer({ section }: SectionRendererProps) {
+export function SectionRenderer({
+  section,
+  hasEmbeddedBookingFlow = false,
+  nextEmbeddedSectionHref,
+}: SectionRendererProps) {
   switch (section.type) {
+    case "marquee":
+      return <MarqueeSection content={section} />
     case "hero":
       return <HeroSection content={section} />
-    case "benefits":
-      return <BenefitsSection content={section} />
-    case "testimonials":
-      return <TestimonialsSection content={section} />
-    case "cta":
-      return <CtaSection content={section} />
+    case "logoStrip":
+      return <LogoStripSection content={section} />
+    case "opportunity":
+      return <OpportunitySection content={section} />
+    case "process":
+      return <ProcessSection content={section} />
+    case "offer":
+      return <OfferSection content={section} />
+    case "features":
+      return <FeaturesSection content={section} />
+    case "revenue":
+      return <RevenueSection content={section} />
+    case "results":
+      return <ResultsSection content={section} />
+    case "audience":
+      return <AudienceSection content={section} />
+    case "videoTestimonials":
+      return <VideoTestimonialsSection content={section} />
+    case "team":
+      return <TeamSection content={section} />
     case "faq":
       return <FaqSection content={section} />
+    case "finalCta":
+      return <FinalCtaSection content={section} />
+    case "booking":
+      return (
+        <BookingSection
+          content={section}
+          hasEmbeddedBookingFlow={hasEmbeddedBookingFlow}
+          nextEmbeddedSectionHref={nextEmbeddedSectionHref}
+        />
+      )
+    case "typeform":
+      return <TypeformSection content={section} />
+    case "calendly":
+      return <CalendlySection content={section} />
     default: {
       // Exhaustiveness check: this line errors if a new union member has no case
       const _exhaustive: never = section
-      return null
+      return _exhaustive
     }
   }
 }

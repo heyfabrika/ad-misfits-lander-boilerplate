@@ -27,51 +27,226 @@ export interface CtaButton {
   size?: "xs" | "sm" | "default" | "lg"
 }
 
+export interface NavLink {
+  label: string
+  href: string
+}
+
+export interface SiteHeaderContent {
+  logoText: string
+  navLinks: NavLink[]
+  cta: CtaButton
+}
+
+export interface SiteFooterContent {
+  contactEmail: string
+  legalLinks: NavLink[]
+  legalDisclaimer: string
+  copyright: string
+}
+
+export interface SiteContent {
+  brand: string
+  header: SiteHeaderContent
+  footer: SiteFooterContent
+}
+
 // ─── Section content shapes ───────────────────────────────────────────────────
+
+export interface MarqueeContent {
+  type: "marquee"
+  items: string[]
+}
+
+export interface HeroStatItem {
+  value: string
+  label: string
+  detail: string
+}
 
 export interface HeroContent {
   type: "hero"
-  /** Optional eyebrow label above the heading */
-  badge?: string
-  /** Supports \n for intentional line breaks */
+  badge: string
   heading: string
   subheading: string
-  buttons: CtaButton[]
+  primaryCta: CtaButton
+  caption: string
+  stats: HeroStatItem[]
 }
 
-export interface BenefitItem {
-  /** Lucide icon name in PascalCase, e.g. "Zap", "Target", "BarChart2" */
+export interface LogoStripImage {
+  /** Image URL or path (e.g. `/logos/acme.svg` or `https://…`). */
+  src: string
+  alt: string
+}
+
+export interface LogoStripContent {
+  type: "logoStrip"
+  label: string
+  items: LogoStripImage[]
+}
+
+export interface ComparisonBarItem {
+  label: string
+  value: string
+  width: string
+  highlight?: boolean
+}
+
+export interface OpportunityCard {
+  title: string
+  stat: string
+  subtitle?: string
+  description?: string
+  comparison?: ComparisonBarItem[]
+  bullets?: string[]
+}
+
+export interface OpportunityContent {
+  type: "opportunity"
+  label: string
+  heading: string
+  cards: OpportunityCard[]
+}
+
+export interface ProcessStep {
+  title: string
+  description: string
+}
+
+export interface ProcessContent {
+  type: "process"
+  label: string
+  heading: string
+  steps: ProcessStep[]
+  tagline: string
+}
+
+export interface OfferFeatureItem {
   icon: string
   title: string
   description: string
 }
 
-export interface BenefitsContent {
-  type: "benefits"
-  heading: string
-  subheading?: string
-  items: BenefitItem[]
+export interface ComparisonColumn {
+  title: string
+  kicker: string
+  items: string[]
 }
 
-export interface TestimonialItem {
-  quote: string
-  author: string
-  role: string
-  company?: string
+export interface OfferContent {
+  type: "offer"
+  heading: string
+  subheading: string
+  items: OfferFeatureItem[]
+  comparison: {
+    left: ComparisonColumn
+    right: ComparisonColumn
+  }
 }
 
-export interface TestimonialsContent {
-  type: "testimonials"
-  heading: string
-  subheading?: string
-  items: TestimonialItem[]
+export interface FeatureCardStat {
+  label: string
+  value: string
 }
 
-export interface CtaSectionContent {
-  type: "cta"
-  heading: string
+export interface FeatureCard {
+  title: string
   description: string
-  button: CtaButton
+  items?: string[]
+  stats?: FeatureCardStat[]
+}
+
+export interface CapabilityItem {
+  icon: string
+  label: string
+}
+
+export interface FeaturesContent {
+  type: "features"
+  heading: string
+  subheading: string
+  cards: FeatureCard[]
+  capabilities: CapabilityItem[]
+}
+
+export interface RevenueStatItem {
+  value: string
+  label: string
+  detail: string
+}
+
+export interface RoadmapMilestone {
+  phase: string
+  title: string
+  detail: string
+}
+
+export interface RevenueContent {
+  type: "revenue"
+  label: string
+  heading: string
+  stats: RevenueStatItem[]
+  roadmap: RoadmapMilestone[]
+  trackRecord: RevenueStatItem[]
+  footnote?: string
+}
+
+export interface ResultCaseStudy {
+  niche: string
+  stat: string
+  detail: string
+  timeline: string
+  background: string
+  services: string
+}
+
+export interface ResultsContent {
+  type: "results"
+  label: string
+  heading: string
+  subheading?: string
+  items: ResultCaseStudy[]
+}
+
+export interface AudienceItem {
+  title: string
+  subtitle: string
+  description: string
+  tone?: "default" | "warning"
+}
+
+export interface AudienceContent {
+  type: "audience"
+  heading: string
+  items: AudienceItem[]
+  cta: CtaButton
+}
+
+export interface VideoTestimonialItem {
+  videoId: string
+  title: string
+  label: string
+  href: string
+}
+
+export interface VideoTestimonialsContent {
+  type: "videoTestimonials"
+  heading: string
+  items: VideoTestimonialItem[]
+}
+
+export interface TeamMember {
+  name: string
+  role: string
+  linkedinUrl: string
+  avatarLabel: string
+}
+
+export interface TeamContent {
+  type: "team"
+  heading: string
+  items: TeamMember[]
 }
 
 export interface FaqItem {
@@ -86,18 +261,89 @@ export interface FaqContent {
   items: FaqItem[]
 }
 
+export interface FinalCtaContent {
+  type: "finalCta"
+  heading: string
+  subheading: string
+  cta: CtaButton
+  caption: string
+}
+
+export interface BookingFieldOption {
+  label: string
+  value: string
+}
+
+export interface BookingField {
+  name: string
+  label: string
+  type: "text" | "email" | "tel" | "select"
+  placeholder?: string
+  required?: boolean
+  options?: BookingFieldOption[]
+}
+
+export interface SchedulerConfig {
+  provider: "calendly" | "cal" | "placeholder"
+  embedUrl?: string
+  timezoneLabel: string
+  title: string
+  description: string
+}
+
+export interface BookingContent {
+  type: "booking"
+  heading: string
+  subheading: string
+  stepLabel: string
+  fields: BookingField[]
+  continueButtonLabel: string
+  scheduler: SchedulerConfig
+}
+
+export interface TypeformSectionContent {
+  type: "typeform"
+  formId: string
+  heading?: string
+  subheading?: string
+  iframeTitle?: string
+  height?: number
+}
+
+export interface CalendlySectionContent {
+  type: "calendly"
+  schedulingUrl: string
+  heading?: string
+  subheading?: string
+  iframeTitle?: string
+  height?: number
+}
+
 // ─── Discriminated union ──────────────────────────────────────────────────────
 
 export type SectionContent =
+  | MarqueeContent
   | HeroContent
-  | BenefitsContent
-  | TestimonialsContent
-  | CtaSectionContent
+  | LogoStripContent
+  | OpportunityContent
+  | ProcessContent
+  | OfferContent
+  | FeaturesContent
+  | RevenueContent
+  | ResultsContent
+  | AudienceContent
+  | VideoTestimonialsContent
+  | TeamContent
   | FaqContent
+  | FinalCtaContent
+  | BookingContent
+  | TypeformSectionContent
+  | CalendlySectionContent
 
 // ─── Root page shape ──────────────────────────────────────────────────────────
 
 export interface PageContent {
+  site?: SiteContent
   /** Ordered array of sections. Render order matches array order. */
   sections: SectionContent[]
 }

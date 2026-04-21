@@ -1,11 +1,18 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowDown } from "lucide-react"
 import { motion } from "motion/react"
 import { Button } from "@/components/ui/button"
-import { fadeUp, stagger } from "@/lib/motion"
 import type { HeroContent } from "@/content/schema"
+import { fadeUp, stagger } from "@/lib/motion"
+import { RichText } from "@/lib/rich-text"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card"
 
 const container = stagger(0.09, 0.1)
 const item = fadeUp
@@ -16,69 +23,74 @@ interface HeroSectionProps {
 
 export function HeroSection({ content }: HeroSectionProps) {
   return (
-    <section className="relative flex min-h-svh flex-col items-center justify-center px-6 py-24 text-center">
-      {/* Top rule */}
-      <div className="absolute inset-x-0 top-0 h-px bg-border" />
-
+    <section className="page-shell section-pad pt-14 md:pt-20">
+      <div className="bg-[radial-gradient(circle_at_50%_12%,rgba(18, 8, 4, 0.07),transparent_55%)] pointer-events-none absolute inset-x-0 top-0 h-[22rem]" />
       <motion.div
-        className="flex flex-col items-center"
+        className="flex flex-col items-center text-center"
         variants={container}
         initial="hidden"
         animate="show"
       >
-        {content.badge && (
-          <motion.p
-            variants={item}
-            className="mb-10 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
-          >
-            {content.badge}
-          </motion.p>
-        )}
+        <motion.p variants={item} className="text-sm text-muted-foreground">
+          {content.badge}
+        </motion.p>
 
         <motion.h1
           variants={item}
-          className="max-w-4xl whitespace-pre-line text-balance text-6xl font-medium leading-[1.04] tracking-tight sm:text-7xl lg:text-[5.5rem]"
+          className="mt-8 text-4xl leading-[0.92] font-[family:var(--font-display)] font-medium tracking-[-0.04em] text-balance text-white sm:text-5xl"
         >
-          {content.heading}
+          <RichText text={content.heading} />
         </motion.h1>
-
-        <motion.div variants={item} className="my-10 h-px w-12 bg-border" />
 
         <motion.p
           variants={item}
-          className="max-w-md text-balance text-base leading-relaxed text-muted-foreground sm:text-lg"
+          className="mt-8 max-w-3xl text-lg leading-8 text-balance text-[color:var(--text-muted)]"
         >
           {content.subheading}
         </motion.p>
 
-        {content.buttons.length > 0 && (
-          <motion.div
-            variants={item}
-            className="mt-12 flex flex-wrap items-center justify-center gap-3"
+        <motion.div variants={item} className="mt-10">
+          <Button
+            variant={content.primaryCta.variant ?? "default"}
+            size={content.primaryCta.size ?? "lg"}
+            render={<Link href={content.primaryCta.href} />}
           >
-            {content.buttons.map((btn) => (
-              <Button
-                key={btn.label}
-                variant={btn.variant ?? "default"}
-                size={btn.size ?? "default"}
-                render={<Link href={btn.href} />}
-              >
-                {btn.label}
-              </Button>
-            ))}
-          </motion.div>
-        )}
-      </motion.div>
+            {content.primaryCta.label}
+          </Button>
+        </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground/50"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-      >
-        <span>Scroll</span>
-        <ArrowDown size={10} strokeWidth={1.5} />
+        <motion.p
+          variants={item}
+          className="mt-4 text-sm text-[color:var(--text-muted)]"
+        >
+          {content.caption}
+        </motion.p>
+
+        <motion.div
+          variants={item}
+          className="mt-14 grid w-full max-w-5xl scale-85 gap-8 lg:grid-cols-4"
+        >
+          {content.stats.map((stat) => (
+            <Card
+              key={stat.label}
+              className="justify-center gap-2 rounded-lg px-6 py-4 text-left"
+            >
+              <CardHeader className="px-2 py-0 text-center">
+                <CardTitle className="text-sm text-muted-foreground">
+                  {stat.label}
+                </CardTitle>
+                <CardDescription className="text-2xl font-semibold text-foreground">
+                  {stat.value}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="px-2 py-0 text-center">
+                <CardDescription className="text-sm">
+                  {stat.detail}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   )

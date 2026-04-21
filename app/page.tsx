@@ -1,19 +1,49 @@
 import { pageContent } from "@/content/load-content"
+import { SiteFooter } from "@/components/chrome/site-footer"
+import { SiteHeader } from "@/components/chrome/site-header"
 import { SectionRenderer } from "@/components/sections/section-renderer"
 
-/**
- * Landing page — rendered entirely from content/content.json.
- *
- * To edit copy: modify content/content.json
- * To reorder sections: reorder the `sections` array in content.json
- * To add/remove sections: add/remove entries and update section-renderer.tsx
- */
 export default function Page() {
+  const hasEmbeddedBookingFlow = pageContent.sections.some(
+    (section) => section.type === "typeform" || section.type === "calendly"
+  )
+  const nextEmbeddedSection = pageContent.sections.find(
+    (section) => section.type === "typeform" || section.type === "calendly"
+  )
+  const nextEmbeddedSectionHref =
+    nextEmbeddedSection?.type === "typeform"
+      ? "#typeform"
+      : nextEmbeddedSection?.type === "calendly"
+        ? "#calendly"
+        : undefined
+
   return (
-    <main>
-      {pageContent.sections.map((section, i) => (
-        <SectionRenderer key={`${section.type}-${i}`} section={section} />
-      ))}
-    </main>
+    <>
+      {pageContent.site ? (
+        <SiteHeader
+          content={pageContent.site.header}
+          brand={pageContent.site.brand}
+        />
+      ) : null}
+      <main className="relative isolate overflow-hidden">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[26rem] bg-[radial-gradient(circle_at_50%_0%,rgba(228,82,30,0.09),transparent_55%)]" />
+        <div className="pointer-events-none absolute top-[26rem] left-[-10rem] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(228,82,30,0.03),transparent_70%)] blur-3xl" />
+        <div className="pointer-events-none absolute top-[62rem] right-[-12rem] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.03),transparent_70%)] blur-3xl" />
+        {pageContent.sections.map((section, i) => (
+          <SectionRenderer
+            key={`${section.type}-${i}`}
+            section={section}
+            hasEmbeddedBookingFlow={hasEmbeddedBookingFlow}
+            nextEmbeddedSectionHref={nextEmbeddedSectionHref}
+          />
+        ))}
+      </main>
+      {pageContent.site ? (
+        <SiteFooter
+          content={pageContent.site.footer}
+          brand={pageContent.site.brand}
+        />
+      ) : null}
+    </>
   )
 }
