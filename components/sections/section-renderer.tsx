@@ -22,20 +22,13 @@ import { VideoTestimonialsSection } from "./video-testimonials-section"
 import { TeamSection } from "./team-section"
 import { FaqSection } from "./faq-section"
 import { FinalCtaSection } from "./final-cta-section"
-import { BookingSection } from "./booking-section"
 import { CalendlySection, TypeformSection } from "./embedded-iframe-section"
 
 interface SectionRendererProps {
   section: SectionContent
-  hasEmbeddedBookingFlow?: boolean
-  nextEmbeddedSectionHref?: string
 }
 
-export function SectionRenderer({
-  section,
-  hasEmbeddedBookingFlow = false,
-  nextEmbeddedSectionHref,
-}: SectionRendererProps) {
+export function SectionRenderer({ section }: SectionRendererProps) {
   switch (section.type) {
     case "marquee":
       return <MarqueeSection content={section} />
@@ -65,14 +58,6 @@ export function SectionRenderer({
       return <FaqSection content={section} />
     case "finalCta":
       return <FinalCtaSection content={section} />
-    case "booking":
-      return (
-        <BookingSection
-          content={section}
-          hasEmbeddedBookingFlow={hasEmbeddedBookingFlow}
-          nextEmbeddedSectionHref={nextEmbeddedSectionHref}
-        />
-      )
     case "typeform":
       return <TypeformSection content={section} />
     case "calendly":

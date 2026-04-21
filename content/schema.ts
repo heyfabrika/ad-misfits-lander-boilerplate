@@ -305,41 +305,19 @@ export interface FinalCtaContent {
   caption: string
 }
 
-export interface BookingFieldOption {
-  label: string
-  value: string
-}
-
-export interface BookingField {
-  name: string
-  label: string
-  type: "text" | "email" | "tel" | "select"
-  placeholder?: string
-  required?: boolean
-  options?: BookingFieldOption[]
-}
-
-export interface SchedulerConfig {
-  provider: "calendly" | "cal" | "placeholder"
-  embedUrl?: string
-  timezoneLabel: string
-  title: string
-  description: string
-}
-
-export interface BookingContent {
-  type: "booking"
-  heading: string
-  subheading: string
-  stepLabel: string
-  fields: BookingField[]
-  continueButtonLabel: string
-  scheduler: SchedulerConfig
+/** One iframe embed; used by `typeform` and `calendly` section `frames` arrays. */
+export interface SectionEmbedFrame {
+  src: string
+  title?: string
+  height?: number
 }
 
 export interface TypeformSectionContent {
   type: "typeform"
-  formId: string
+  /** Single embed built as `form.typeform.com/to/{formId}`; ignored when `frames` is non-empty. */
+  formId?: string
+  /** When non-empty, each entry becomes an iframe (validated host: `form.typeform.com`). */
+  frames?: SectionEmbedFrame[]
   heading?: string
   subheading?: string
   iframeTitle?: string
@@ -348,7 +326,10 @@ export interface TypeformSectionContent {
 
 export interface CalendlySectionContent {
   type: "calendly"
-  schedulingUrl: string
+  /** Inline embed URL; ignored when `frames` is non-empty. */
+  schedulingUrl?: string
+  /** When non-empty, each entry becomes an iframe (validated host: `calendly.com`). */
+  frames?: SectionEmbedFrame[]
   heading?: string
   subheading?: string
   iframeTitle?: string
@@ -372,7 +353,6 @@ export type SectionContent =
   | TeamContent
   | FaqContent
   | FinalCtaContent
-  | BookingContent
   | TypeformSectionContent
   | CalendlySectionContent
 

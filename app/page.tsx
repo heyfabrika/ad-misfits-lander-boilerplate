@@ -4,19 +4,6 @@ import { SiteHeader } from "@/components/chrome/site-header"
 import { SectionRenderer } from "@/components/sections/section-renderer"
 
 export default function Page() {
-  const hasEmbeddedBookingFlow = pageContent.sections.some(
-    (section) => section.type === "typeform" || section.type === "calendly"
-  )
-  const nextEmbeddedSection = pageContent.sections.find(
-    (section) => section.type === "typeform" || section.type === "calendly"
-  )
-  const nextEmbeddedSectionHref =
-    nextEmbeddedSection?.type === "typeform"
-      ? "#typeform"
-      : nextEmbeddedSection?.type === "calendly"
-        ? "#calendly"
-        : undefined
-
   return (
     <>
       {pageContent.site ? (
@@ -30,12 +17,7 @@ export default function Page() {
         <div className="pointer-events-none absolute top-[26rem] left-[-10rem] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(228,82,30,0.03),transparent_70%)] blur-3xl" />
         <div className="pointer-events-none absolute top-[62rem] right-[-12rem] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.03),transparent_70%)] blur-3xl" />
         {pageContent.sections.map((section, i) => (
-          <SectionRenderer
-            key={`${section.type}-${i}`}
-            section={section}
-            hasEmbeddedBookingFlow={hasEmbeddedBookingFlow}
-            nextEmbeddedSectionHref={nextEmbeddedSectionHref}
-          />
+          <SectionRenderer key={`${section.type}-${i}`} section={section} />
         ))}
       </main>
       {pageContent.site ? (

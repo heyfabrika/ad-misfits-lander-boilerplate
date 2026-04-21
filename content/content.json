@@ -11,7 +11,7 @@
       ],
       "cta": {
         "label": "Book a Strategy Call",
-        "href": "#book",
+        "href": "#typeform",
         "variant": "default",
         "size": "default"
       }
@@ -48,7 +48,7 @@
       "subheading": "Without building it, running the day-to-day, or learning any tech. For investors seeking high-cashflow businesses in the fastest-growing sector in history.",
       "primaryCta": {
         "label": "Book a Private Strategy Call",
-        "href": "#book",
+        "href": "#typeform",
         "variant": "default",
         "size": "lg"
       },
@@ -426,7 +426,7 @@
       ],
       "cta": {
         "label": "Claim Your Agency",
-        "href": "#book",
+        "href": "#typeform",
         "variant": "default",
         "size": "lg"
       }
@@ -565,83 +565,35 @@
       "subheading": "By 2027, this market will be saturated. Early movers are securing high-ticket clients with minimal competition.",
       "cta": {
         "label": "Apply for Your Private Consultation",
-        "href": "#book",
+        "href": "#typeform",
         "variant": "default",
         "size": "lg"
       },
       "caption": "Due to our hands-on build process, we can only launch 5 new agencies per month."
     },
     {
-      "type": "booking",
-      "heading": "Book a Private Strategy Call",
-      "subheading": "Answer a few quick questions here, then continue to the final application or scheduling step below. No pressure, no pitch, just a private consultation.",
-      "stepLabel": "Step 1 of 2",
-      "fields": [
+      "type": "typeform",
+      "heading": "Complete your application",
+      "subheading": "Swap `frames[0].src` in content.json for your live Typeform embed URL.",
+      "frames": [
         {
-          "name": "fullName",
-          "label": "Full Name",
-          "type": "text",
-          "placeholder": "Your full name",
-          "required": true
-        },
-        {
-          "name": "email",
-          "label": "Email",
-          "type": "email",
-          "placeholder": "you@example.com",
-          "required": true
-        },
-        {
-          "name": "phone",
-          "label": "Phone",
-          "type": "tel",
-          "placeholder": "+1 (555) 555-5555",
-          "required": true
-        },
-        {
-          "name": "profile",
-          "label": "What best describes you?",
-          "type": "select",
-          "required": true,
-          "options": [
-            { "label": "Investor", "value": "investor" },
-            { "label": "Entrepreneur", "value": "entrepreneur" },
-            { "label": "Career Professional", "value": "career-professional" },
-            { "label": "Other", "value": "other" }
-          ]
-        },
-        {
-          "name": "capital",
-          "label": "Capital available to invest?",
-          "type": "select",
-          "required": true,
-          "options": [
-            { "label": "<$27K", "value": "under-27k" },
-            { "label": "$27K-$50K", "value": "27k-50k" },
-            { "label": "$50K-$75K", "value": "50k-75k" },
-            { "label": "$75K+", "value": "75k-plus" }
-          ]
-        },
-        {
-          "name": "timeline",
-          "label": "How soon are you looking to start?",
-          "type": "select",
-          "required": true,
-          "options": [
-            { "label": "ASAP", "value": "asap" },
-            { "label": "1-3 months", "value": "1-3-months" },
-            { "label": "3-6 months", "value": "3-6-months" },
-            { "label": "Just exploring", "value": "exploring" }
-          ]
+          "src": "https://form.typeform.com/to/REPLACE_WITH_FORM_ID",
+          "title": "Private application",
+          "height": 520
         }
-      ],
-      "continueButtonLabel": "Continue to Step 2",
-      "scheduler": {
-        "provider": "placeholder",
-        "timezoneLabel": "Times shown in your timezone",
-        "title": "Choose a time for your private consultation",
-        "description": "This shell is ready for a Calendly or Cal.com embed. Until then it mirrors the layout and pacing of the live booking experience."
-      }
+      ]
+    },
+    {
+      "type": "calendly",
+      "heading": "Pick a time that works for you",
+      "subheading": "Swap `frames[0].src` in content.json for your Calendly inline scheduling URL.",
+      "frames": [
+        {
+          "src": "https://calendly.com/your-handle/30min",
+          "title": "Schedule a call",
+          "height": 680
+        }
+      ]
     }
   ]
 }
