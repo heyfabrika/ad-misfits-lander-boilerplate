@@ -89,14 +89,27 @@ export interface LogoStripContent {
 export interface ComparisonBarItem {
   label: string
   value: string
-  width: string
+  /** Completion 0–100 (used with `Progress`). */
+  progress: number
   highlight?: boolean
+}
+
+/** Single highlighted band row + progress (e.g. market size card). */
+export interface OpportunityMarketBand {
+  leftLabel: string
+  rightLabel: string
+  /** 0–100 */
+  progress: number
 }
 
 export interface OpportunityCard {
   title: string
   stat: string
+  /** Muted line under the main stat (e.g. “in 2 months”, “by 2030”). */
+  statKicker?: string
   subtitle?: string
+  marketBand?: OpportunityMarketBand
+  footnote?: string
   description?: string
   comparison?: ComparisonBarItem[]
   bullets?: string[]
@@ -150,20 +163,30 @@ export interface FeatureCardStat {
   value: string
 }
 
+/** Row in the left “architecture” card: label + green status. */
+export interface FeatureCardChecklistItem {
+  label: string
+  status: string
+}
+
 export interface FeatureCard {
+  /** Small caps label above the title (e.g. “CLEAN ARCHITECTURE”). */
+  category?: string
   title: string
   description: string
-  items?: string[]
+  items?: FeatureCardChecklistItem[]
   stats?: FeatureCardStat[]
 }
 
 export interface CapabilityItem {
-  icon: string
-  label: string
+  title: string
+  description: string
 }
 
 export interface FeaturesContent {
   type: "features"
+  /** Centered orange kicker above the heading (e.g. “EVERYTHING YOU NEED”). */
+  label?: string
   heading: string
   subheading: string
   cards: FeatureCard[]
@@ -186,9 +209,15 @@ export interface RevenueContent {
   type: "revenue"
   label: string
   heading: string
+  /** Centered label above the partner journey timeline. */
+  journeyLabel?: string
   stats: RevenueStatItem[]
   roadmap: RoadmapMilestone[]
   trackRecord: RevenueStatItem[]
+  /** Uppercase kicker in the track record card header. */
+  trackRecordHeading?: string
+  /** Shown next to a bullet in the track record header (e.g. “Verified”). */
+  trackRecordVerified?: string
   footnote?: string
 }
 
@@ -239,12 +268,19 @@ export interface VideoTestimonialsContent {
 export interface TeamMember {
   name: string
   role: string
+  /** Short biography shown on the card. */
+  bio: string
   linkedinUrl: string
+  /** Used for initials when `avatarSrc` is omitted. */
   avatarLabel: string
+  /** Optional headshot URL; when absent, initials are shown. */
+  avatarSrc?: string
 }
 
 export interface TeamContent {
   type: "team"
+  /** Small caps line above the heading (e.g. “Leadership team”). */
+  label?: string
   heading: string
   items: TeamMember[]
 }

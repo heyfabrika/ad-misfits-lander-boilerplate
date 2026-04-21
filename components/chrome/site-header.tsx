@@ -9,7 +9,7 @@ interface SiteHeaderProps {
 
 export function SiteHeader({ brand, content }: SiteHeaderProps) {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/6 bg-[rgba(5,7,12,0.78)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/6 bg-background backdrop-blur-xl">
       <div className="content-shell flex min-h-[4.5rem] items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3">
           <span className="rounded-full border border-[color:var(--border-gold)] bg-[rgba(228,82,30,0.06)] px-3 py-1 font-mono text-[0.65rem] tracking-[0.26em] text-[color:var(--text-gold)] uppercase">

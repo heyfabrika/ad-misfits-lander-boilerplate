@@ -2,8 +2,8 @@
 
 import { motion } from "motion/react"
 import type { ResultsContent } from "@/content/schema"
+import { RichText } from "@/lib/rich-text"
 import { fadeUp, stagger, viewport } from "@/lib/motion"
-import { SectionHeading, SectionLabel, SectionLead } from "./section-primitives"
 
 interface ResultsSectionProps {
   content: ResultsContent
@@ -11,73 +11,83 @@ interface ResultsSectionProps {
 
 export function ResultsSection({ content }: ResultsSectionProps) {
   return (
-    <section className="section-pad">
-      <div className="content-shell">
+    <section className="py-16">
+      <div className="mx-auto w-full max-w-7xl px-5 md:px-6">
         <motion.div
-          className="max-w-4xl space-y-5"
+          className="mx-auto max-w-4xl text-center"
           initial="hidden"
           whileInView="show"
           viewport={viewport}
           variants={stagger(0.08)}
         >
-          <motion.div variants={fadeUp}>
-            <SectionLabel>{content.label}</SectionLabel>
-          </motion.div>
-          <motion.div variants={fadeUp}>
-            <SectionHeading text={content.heading} />
-          </motion.div>
+          <motion.p
+            variants={fadeUp}
+            className="text-[11px] font-semibold tracking-[0.38em] text-[#FF6B35] uppercase"
+          >
+            {content.label}
+          </motion.p>
+          <motion.h2
+            variants={fadeUp}
+            className="mt-4 text-4xl font-semibold tracking-[-0.02em] text-balance text-white sm:text-[2.75rem] sm:leading-[1.12] lg:text-5xl lg:leading-[1.08] [&_em]:font-serif [&_em]:font-medium [&_em]:text-[#FF6B35] [&_em]:italic"
+          >
+            <RichText text={content.heading} />
+          </motion.h2>
           {content.subheading ? (
-            <motion.div variants={fadeUp}>
-              <SectionLead text={content.subheading} />
-            </motion.div>
+            <motion.p
+              variants={fadeUp}
+              className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-pretty text-[#A1A1AA] sm:text-[0.9375rem] sm:leading-8"
+            >
+              {content.subheading}
+            </motion.p>
           ) : null}
         </motion.div>
 
         <motion.div
-          className="mt-14 grid gap-6 lg:grid-cols-2 xl:grid-cols-3"
+          className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7"
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          variants={stagger(0.08)}
+          variants={stagger(0.06)}
         >
           {content.items.map((item) => (
             <motion.article
               key={`${item.niche}-${item.stat}`}
               variants={fadeUp}
-              className="rounded-[1.8rem] glass-card p-7"
+              className="rounded-xl border border-white/10 bg-[#111111] p-6 sm:p-8"
             >
-              <div className="flex items-start justify-between gap-4">
-                <p className="rounded-full border border-[color:var(--border-gold)] bg-[rgba(228,82,30,0.08)] px-3 py-1 text-xs font-semibold tracking-[0.18em] text-[color:var(--text-gold)] uppercase">
-                  {item.niche}
-                </p>
-                <span className="font-mono text-xs tracking-[0.18em] text-[color:var(--text-muted)] uppercase">
-                  Case study
-                </span>
-              </div>
-              <h3 className="mt-6 text-3xl leading-tight font-semibold text-white">
+              <p className="text-[11px] font-semibold tracking-[0.22em] text-[#6366F1] uppercase">
+                {item.niche}
+              </p>
+              <h3 className="mt-5 text-[1.625rem] leading-[1.15] font-bold tracking-[-0.02em] text-white sm:text-[1.75rem]">
                 {item.stat}
               </h3>
-              <p className="mt-3 text-base leading-8 text-[color:var(--text-muted)]">
+              <p className="mt-2 text-[0.9375rem] leading-7 text-[#A1A1AA]">
                 {item.detail}
               </p>
-              <dl className="mt-8 space-y-4 text-sm leading-7">
-                <div>
-                  <dt className="font-mono text-xs tracking-[0.2em] text-[color:var(--text-muted)] uppercase">
+              <dl className="mt-8 space-y-3.5">
+                <div className="flex items-start justify-between gap-4 text-[13px] leading-snug">
+                  <dt className="shrink-0 font-medium tracking-[0.14em] text-[#A1A1AA] uppercase">
                     Timeline
                   </dt>
-                  <dd className="mt-1 text-white">{item.timeline}</dd>
+                  <dd className="text-right font-normal text-white">
+                    {item.timeline}
+                  </dd>
                 </div>
-                <div>
-                  <dt className="font-mono text-xs tracking-[0.2em] text-[color:var(--text-muted)] uppercase">
+                <div className="flex items-start justify-between gap-4 text-[13px] leading-snug">
+                  <dt className="shrink-0 font-medium tracking-[0.14em] text-[#A1A1AA] uppercase">
                     Background
                   </dt>
-                  <dd className="mt-1 text-white">{item.background}</dd>
+                  <dd className="text-right font-normal text-white">
+                    {item.background}
+                  </dd>
                 </div>
-                <div>
-                  <dt className="font-mono text-xs tracking-[0.2em] text-[color:var(--text-muted)] uppercase">
+                <div className="flex items-start justify-between gap-4 text-[13px] leading-snug">
+                  <dt className="shrink-0 font-medium tracking-[0.14em] text-[#A1A1AA] uppercase">
                     Services
                   </dt>
-                  <dd className="mt-1 text-white">{item.services}</dd>
+                  <dd className="text-right font-normal text-white">
+                    {item.services}
+                  </dd>
                 </div>
               </dl>
             </motion.article>

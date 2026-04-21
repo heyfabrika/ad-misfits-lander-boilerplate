@@ -19,7 +19,7 @@ export function LogoStripSection({ content }: LogoStripSectionProps) {
   if (images.length === 0) return null
 
   return (
-    <section className="bg-neutral-900/20 bg-full border border-white/6 py-12">
+    <section className="bg-full border border-white/6 bg-neutral-900/20 py-12">
       <motion.div
         className="content-shell"
         initial="hidden"
