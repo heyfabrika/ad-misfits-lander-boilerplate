@@ -45,10 +45,20 @@ export interface SiteFooterContent {
   copyright: string
 }
 
+export interface SiteAnalyticsPosthogContent {
+  key: string
+  host?: string
+}
+
+export interface SiteAnalyticsContent {
+  posthog?: SiteAnalyticsPosthogContent
+}
+
 export interface SiteContent {
   brand: string
   header: SiteHeaderContent
   footer: SiteFooterContent
+  analytics?: SiteAnalyticsContent
 }
 
 // ─── Section content shapes ───────────────────────────────────────────────────

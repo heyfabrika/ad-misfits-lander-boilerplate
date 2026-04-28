@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import type { SiteHeaderContent } from "@/content/schema"
 import { Button } from "@/components/ui/button"
+import { captureEvent } from "@/lib/posthog"
 
 interface SiteHeaderProps {
   brand: string
@@ -8,6 +11,14 @@ interface SiteHeaderProps {
 }
 
 export function SiteHeader({ brand, content }: SiteHeaderProps) {
+  const handleCtaClick = () => {
+    captureEvent("lander_cta_clicked", {
+      placement: "header",
+      cta_label: content.cta.label,
+      cta_href: content.cta.href,
+    })
+  }
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/6 bg-background backdrop-blur-xl">
       <div className="content-shell flex min-h-[4.5rem] items-center justify-between gap-4">
@@ -41,6 +52,7 @@ export function SiteHeader({ brand, content }: SiteHeaderProps) {
           variant={content.cta.variant ?? "default"}
           size={content.cta.size ?? "default"}
           render={<Link href={content.cta.href} />}
+          onClick={handleCtaClick}
           className="hidden lg:inline-flex lg:h-9 lg:px-4 lg:text-sm"
         >
           {content.cta.label}

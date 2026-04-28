@@ -5,6 +5,7 @@ import { motion } from "motion/react"
 import { Button } from "@/components/ui/button"
 import type { HeroContent } from "@/content/schema"
 import { fadeUp, stagger } from "@/lib/motion"
+import { captureEvent } from "@/lib/posthog"
 import { RichText } from "@/lib/rich-text"
 import {
   Card,
@@ -22,6 +23,14 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ content }: HeroSectionProps) {
+  const handleCtaClick = () => {
+    captureEvent("lander_cta_clicked", {
+      placement: "hero",
+      cta_label: content.primaryCta.label,
+      cta_href: content.primaryCta.href,
+    })
+  }
+
   return (
     <section className="page-shell section-pad pt-14 md:pt-20">
       <div className="bg-[radial-gradient(circle_at_50%_12%,rgba(18, 8, 4, 0.07),transparent_55%)] pointer-events-none absolute inset-x-0 top-0 h-[22rem]" />
@@ -54,6 +63,7 @@ export function HeroSection({ content }: HeroSectionProps) {
             variant={content.primaryCta.variant ?? "default"}
             size={content.primaryCta.size ?? "lg"}
             render={<Link href={content.primaryCta.href} />}
+            onClick={handleCtaClick}
           >
             {content.primaryCta.label}
           </Button>

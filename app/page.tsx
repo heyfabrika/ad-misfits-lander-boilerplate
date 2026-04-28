@@ -1,4 +1,5 @@
 import { pageContent } from "@/content/load-content"
+import { PosthogProvider } from "@/components/analytics/posthog-provider"
 import { SiteFooter } from "@/components/chrome/site-footer"
 import { SiteHeader } from "@/components/chrome/site-header"
 import { SectionRenderer } from "@/components/sections/section-renderer"
@@ -6,6 +7,11 @@ import { SectionRenderer } from "@/components/sections/section-renderer"
 export default function Page() {
   return (
     <>
+      <PosthogProvider
+        brand={pageContent.site?.brand}
+        apiKey={pageContent.site?.analytics?.posthog?.key}
+        apiHost={pageContent.site?.analytics?.posthog?.host}
+      />
       {pageContent.site ? (
         <SiteHeader
           content={pageContent.site.header}

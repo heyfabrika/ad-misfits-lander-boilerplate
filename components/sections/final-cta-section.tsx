@@ -5,6 +5,7 @@ import { motion } from "motion/react"
 import type { FinalCtaContent } from "@/content/schema"
 import { Button } from "@/components/ui/button"
 import { fadeUp, stagger, viewport } from "@/lib/motion"
+import { captureEvent } from "@/lib/posthog"
 import { RichText } from "@/lib/rich-text"
 import { cn } from "@/lib/utils"
 
@@ -13,6 +14,14 @@ interface FinalCtaSectionProps {
 }
 
 export function FinalCtaSection({ content }: FinalCtaSectionProps) {
+  const handleCtaClick = () => {
+    captureEvent("lander_cta_clicked", {
+      placement: "final_cta",
+      cta_label: content.cta.label,
+      cta_href: content.cta.href,
+    })
+  }
+
   return (
     <section
       className={cn(
@@ -59,6 +68,7 @@ export function FinalCtaSection({ content }: FinalCtaSectionProps) {
             variant={content.cta.variant ?? "default"}
             size={content.cta.size ?? "lg"}
             render={<Link href={content.cta.href} />}
+            onClick={handleCtaClick}
             className={cn(
               "h-auto min-h-12 rounded-full border-0 px-8 py-3.5 text-base font-bold",
               "bg-[linear-gradient(180deg,#fb923c_0%,#ea580c_100%)] text-white",

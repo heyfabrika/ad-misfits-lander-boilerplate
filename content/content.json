@@ -24,6 +24,12 @@
       ],
       "legalDisclaimer": "ScaleLogix A.I is a consulting and infrastructure licensing company. We do not offer business opportunities, franchises, or passive investments. Nothing in our materials should be interpreted as a guarantee of income, success, or results. All earnings examples are illustrative only. Your results will vary and depend on your niche, offer quality, marketing execution, client demand, and personal effort. ScaleLogix operates under the jurisdiction of Florida, USA.",
       "copyright": "© ScaleLogix All rights reserved."
+    },
+    "analytics": {
+      "posthog": {
+        "key": "",
+        "host": "https://us.i.posthog.com"
+      }
     }
   },
   "sections": [

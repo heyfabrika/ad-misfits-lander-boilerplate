@@ -5,6 +5,7 @@ import { motion } from "motion/react"
 import type { AudienceContent } from "@/content/schema"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { captureEvent } from "@/lib/posthog"
 import { cn } from "@/lib/utils"
 import { RichText } from "@/lib/rich-text"
 import { fadeUp, stagger, viewport } from "@/lib/motion"
@@ -14,6 +15,14 @@ interface AudienceSectionProps {
 }
 
 export function AudienceSection({ content }: AudienceSectionProps) {
+  const handleCtaClick = () => {
+    captureEvent("lander_cta_clicked", {
+      placement: "audience",
+      cta_label: content.cta.label,
+      cta_href: content.cta.href,
+    })
+  }
+
   return (
     <section className="py-16">
       <div className="flex flex-col items-center justify-center gap-16">
@@ -96,6 +105,7 @@ export function AudienceSection({ content }: AudienceSectionProps) {
             size={content.cta.size ?? "lg"}
             className="rounded-full px-9 text-[0.92rem] font-semibold tracking-wide shadow-[0_10px_28px_rgba(228,93,37,0.35)]"
             render={<Link href={content.cta.href} />}
+            onClick={handleCtaClick}
           >
             {content.cta.label}
           </Button>
